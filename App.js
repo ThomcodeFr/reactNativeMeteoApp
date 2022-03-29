@@ -2,13 +2,11 @@ import { StatusBar } from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import * as Location from 'expo-location'
+import Search from './components/Search'
 import WeatherInfo from './components/WeatherInfo'
 import ReloadIcon from './components/ReloadIcons'
 import WeatherDetails from './components/WeatherDetails'
 import { colors } from './utils/index.js'
-
-const WEATHER_API_KEY = 'fd2dd6e009a60f32a13bb79a995da28e'
-const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
 export default function App() {
   const [errorMessage, setErrorMessage] = useState(null)
@@ -59,6 +57,9 @@ export default function App() {
       <View style={styles.container}>
         <StatusBar style="auto" />
         <View view style={styles.main}>
+          <View style={styles.searchStyle}>
+            <Search />
+          </View>
           <ReloadIcon load={load} />
           <WeatherInfo currentWeather={currentWeather} />
         </View>
@@ -89,6 +90,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, //flex tout l'espace
     justifyContent: 'center',
+  },
+  searchStyle: {
+    textAlign: 'center',
   },
   main: {
     justifyContent: 'center',
