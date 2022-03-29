@@ -7,6 +7,9 @@ import WeatherInfo from './components/WeatherInfo'
 import ReloadIcon from './components/ReloadIcons'
 import WeatherDetails from './components/WeatherDetails'
 import { colors } from './utils/index.js'
+import { WEATHER_API_KEY } from 'react-native-dotenv'
+
+const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
 export default function App() {
   const [errorMessage, setErrorMessage] = useState(null)
