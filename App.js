@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import * as Location from 'expo-location'
 import Search from './components/Search'
 import WeatherInfo from './components/WeatherInfo'
-import ReloadIcon from './components/ReloadIcons'
 import WeatherDetails from './components/WeatherDetails'
 import { colors } from './utils/index.js'
 import { WEATHER_API_KEY } from 'react-native-dotenv'
@@ -63,7 +62,6 @@ export default function App() {
           <View style={styles.searchStyle}>
             <Search />
           </View>
-          <ReloadIcon load={load} />
           <WeatherInfo currentWeather={currentWeather} />
         </View>
         <WeatherDetails
